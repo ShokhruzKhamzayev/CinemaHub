@@ -24,3 +24,13 @@ export async function fetchMovies() {
     const movies = await axos.get(`${base_url}/movie/now_playing`)
     return movies
 }
+
+export async function fetchTopRated() {
+    const movies = await axos.get(`${base_url}/movie/top_rated`)
+    return movies
+}
+
+export async function fetchUpcoming() {
+    const movies = await axos.get(`${base_url}/movie/upcoming`)
+    return movies
+}

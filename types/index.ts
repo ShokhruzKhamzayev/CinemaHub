@@ -1,7 +1,10 @@
 export interface Movie {
     adult: false,
     backdrop_path: string,
-    genre_ids: string[],
+    genre_ids: {
+        id: number,
+        genre: string
+    }[],
     id: number,
     original_language: string,
     original_title: string,
@@ -16,5 +19,6 @@ export interface Movie {
 }
 
 export interface StarterTypo {
-    data: Movie
+    data: Movie[],
+    name?: string
 }

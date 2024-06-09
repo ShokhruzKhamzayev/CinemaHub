@@ -1,15 +1,20 @@
-import { fetchNowPlaying, fetchPopularMovies } from "./api";
+import { CarouselReuse } from "@/components/shared/carouselReuse";
+import { fetchNowPlaying, fetchPopularMovies, fetchTopRated, fetchUpcoming } from "./api";
 import StarterFull from "@/components/shared/starterFull";
 
 export default async function Home() {
-  // const { data } = await fetchPopularMovies()
-  const { data } = await fetchNowPlaying()
-  const { results } = data
+  const { data: nowPlaying } = await fetchNowPlaying()
+  const { data: popularMovies } = await fetchPopularMovies()
+  const { data: topRated } = await fetchTopRated()
+  const { data: upcoming } = await fetchUpcoming()
   return (
     <>
-      <StarterFull data={results[0]} />
+      <StarterFull data={nowPlaying.results[0]} />
       <div className="container">
-        <div className="trands"></div>
+        <CarouselReuse data={popularMovies.results} name="Popular Movies" />
+        <CarouselReuse data={topRated.results} name="Top Rated Movies" />
+        <CarouselReuse data={nowPlaying.results} name="Streaming now" />
+        <CarouselReuse data={upcoming.results} name="Upcoming Movies" />
       </div>
     </>
   );
