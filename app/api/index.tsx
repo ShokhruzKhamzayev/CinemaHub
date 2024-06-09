@@ -1,4 +1,5 @@
 'use server'
+import { Movie } from "@/types";
 import axios from "axios";
 
 const base_url = 'https://api.themoviedb.org/3'
@@ -32,5 +33,11 @@ export async function fetchTopRated() {
 
 export async function fetchUpcoming() {
     const movies = await axos.get(`${base_url}/movie/upcoming`)
+    return movies
+}
+
+
+export async function fetchRecomendations(movie_id: number) {
+    const movies = await axos.get<{ results: Movie[] }>(`${base_url}/movie/${movie_id}/recommendations`)
     return movies
 }
