@@ -3,6 +3,7 @@ import { Movie, StarterTypo } from "@/types"
 import Image from "next/image"
 import { Card, CardHeader } from "../ui/card"
 import { base_image_url_full, base_image_url_mini } from "@/constants"
+import CustomImage from "../ui/customImage"
 
 export default async function StarterFull({ data }: {
     data: Movie
@@ -26,8 +27,8 @@ export default async function StarterFull({ data }: {
                                     <div key={movie.id} className="w-1/2">
                                         <Card>
                                             <CardHeader>
-                                                <div className="relative w-full h-[300px]">
-                                                    <Image src={`${base_image_url_mini}/${movie.poster_path}`} alt="123" fill />
+                                                <div className="relative w-full h-[300px] overflow-hidden">
+                                                    <CustomImage src={`${base_image_url_mini}/${movie.poster_path}`} alt={movie.title} />
                                                 </div>
                                                 <h1>{movie.title}</h1>
                                             </CardHeader>

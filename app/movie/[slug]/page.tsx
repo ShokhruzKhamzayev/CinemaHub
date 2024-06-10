@@ -1,13 +1,15 @@
+import { fetchSpecificMovie } from '@/app/api'
 import React from 'react'
 
 type PageProps = {
   params: {
-    slug: string
+    slug: number
   }
 }
 
-export default function SpecificMovie({ params: { slug } }: PageProps) {
+export default async function SpecificMovie({ params: { slug } }: PageProps) {
+  const { data } = await fetchSpecificMovie(slug)
   return (
-    <div className='container'>SpecificMovie {slug}</div>
+    <div className='container'>{JSON.stringify(data)}</div>
   )
 }
