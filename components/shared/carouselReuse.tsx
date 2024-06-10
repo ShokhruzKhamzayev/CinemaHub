@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader } from '../ui/card'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRightIcon } from '@radix-ui/react-icons'
+import { base_image_url_mini } from '@/constants'
 
 export function CarouselReuse({ data, name }: StarterTypo) {
     const [emblaRef] = useEmblaCarousel()
@@ -21,7 +22,7 @@ export function CarouselReuse({ data, name }: StarterTypo) {
                                 <Card>
                                     <CardHeader>
                                         <div className='relative w-full h-[400px]'>
-                                            <Image src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} fill className='object-cover' />
+                                            <Image src={`${base_image_url_mini}/${movie.poster_path}`} alt={movie.title} fill className='object-cover' />
                                         </div>
                                     </CardHeader>
                                     <CardContent>

@@ -1,8 +1,7 @@
 'use server'
+import { base_url } from "@/constants";
 import { Movie } from "@/types";
 import axios from "axios";
-
-const base_url = 'https://api.themoviedb.org/3'
 
 const axos = axios.create({
     headers: {
