@@ -7,6 +7,7 @@ import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
 import SonnerWithThemes from "@/components/ui/sonnerWithThemes";
 import NextTopLoader from "nextjs-toploader";
+import AuthProvider from "@/providers/AuthProvider";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ['400', '500', '600', '700', '800', '900'] });
 
@@ -24,11 +25,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn(poppins.className, 'bg-bg dark:bg-bg-dark text-text dark:text-text-dark')}>
         <Providers>
-          <NextTopLoader showSpinner={false} color="#2313f7"/>
-          <SonnerWithThemes />
-          <Header />
-          {children}
-          <Footer />
+          <AuthProvider>
+            <NextTopLoader showSpinner={false} color="#2313f7" />
+            <SonnerWithThemes />
+            <Header />
+            {children}
+            <Footer />
+          </AuthProvider>
         </Providers>
       </body>
     </html>
