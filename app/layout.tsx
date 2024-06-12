@@ -34,8 +34,8 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <BgEffects />
           </AuthProvider>
-          <BgEffects />
         </Providers>
       </body>
     </html>
