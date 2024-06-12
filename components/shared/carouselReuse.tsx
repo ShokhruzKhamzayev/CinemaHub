@@ -18,7 +18,7 @@ export function CarouselReuse({ data, name }: StarterTypo) {
                 <div className="embla__container">
                     {
                         data.map(movie => (
-                            <div className="embla__slide" key={movie.id}>
+                            <div className="embla__slide flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33%] 2xl:flex-[0_0_25%] min-w-0" key={movie.id}>
                                 <Link href={`/movie/${movie.id}`}>
                                     <Card>
                                         <CardHeader>

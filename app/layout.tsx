@@ -23,14 +23,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className={cn(poppins.className, 'bg-bg dark:bg-bg-dark text-text dark:text-text-dark')}>
         <Providers>
           <AuthProvider>
             <NextTopLoader showSpinner={false} color="#2313f7" />
             <SonnerWithThemes />
             <Header />
-            {children}
+            <main>
+              {children}
+            </main>
             <Footer />
           </AuthProvider>
           <BgEffects />

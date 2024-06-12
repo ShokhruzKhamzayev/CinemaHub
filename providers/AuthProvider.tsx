@@ -6,7 +6,6 @@ export default function AuthProvider({ children }: {
     children: React.ReactNode
 }) {
     const { theme } = useTheme()
-    console.log(theme)
     return (
         // @ts-ignore
         <ClerkProvider appearance={theme === 'dark' ? dark : experimental__simple}>{children}</ClerkProvider>
