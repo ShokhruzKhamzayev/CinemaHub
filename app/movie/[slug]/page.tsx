@@ -1,4 +1,5 @@
 import { fetchSpecificMovie } from '@/app/api'
+import NotFound from '@/app/not-found'
 import React from 'react'
 
 type PageProps = {
@@ -8,7 +9,10 @@ type PageProps = {
 }
 
 export default async function SpecificMovie({ params: { slug } }: PageProps) {
-  const { data } = await fetchSpecificMovie(slug)
+  const { data, status } = await fetchSpecificMovie(slug)
+  if (status === 404) {
+    return <NotFound />
+  }
   return (
     <div className='container'>{JSON.stringify(data)}</div>
   )
