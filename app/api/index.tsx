@@ -42,6 +42,6 @@ export async function fetchRecomendations(movie_id: number) {
 }
 
 export async function fetchSpecificMovie(movie_id: number) {
-    const movies = await axos.get<{ results: Movie }>(`${base_url}/movie/${movie_id}`)
+    const movies = await axos.get<Movie>(`${base_url}/movie/${movie_id}`)
     return movies
 }

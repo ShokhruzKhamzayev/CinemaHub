@@ -8,7 +8,6 @@ import Footer from "@/components/shared/footer";
 import SonnerWithThemes from "@/components/ui/sonnerWithThemes";
 import NextTopLoader from "nextjs-toploader";
 import AuthProvider from "@/providers/AuthProvider";
-import BgEffects from "@/components/shared/bgEffects";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ['400', '500', '600', '700', '800', '900'] });
 
@@ -34,7 +33,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
-            <BgEffects />
+            <div className="relative h-full w-full bg-neutral-900"><div className="fixed inset-0 z-[-10] bg-fuchsia-400 bg-[size:20px_20px] opacity-20 blur-[100px]"></div></div>
           </AuthProvider>
         </Providers>
       </body>
