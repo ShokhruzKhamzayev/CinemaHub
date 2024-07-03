@@ -42,7 +42,6 @@ export function CarouselReuse({ data, name }: StarterTypo) {
                                     <Card>
                                         <CardHeader>
                                             <div className='relative w-full h-[400px] overflow-hidden'>
-                                                {/* <Image src={`${base_image_url_mini}/${movie.poster_path}`} alt={movie.title} fill className='object-cover' /> */}
                                                 <CustomImage src={`${base_image_url_mini}/${movie.poster_path}`} alt={movie.title} />
                                             </div>
                                         </CardHeader>
